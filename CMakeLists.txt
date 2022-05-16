@@ -20,6 +20,7 @@ set( library_name VEX_Plugin )
 # Add a library and its source files.
 add_library( ${library_name} SHARED
 ./plugins/VEX_Plugin.C
+./plugins/utilities/utilities.h
 )
 
 # Link against the Houdini libraries, and add required include directories and

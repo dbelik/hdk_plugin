@@ -1,6 +1,10 @@
 # SECTION: Variables.
 BASE_DIR :=$(patsubst %/,%,$(dir $(abspath $(lastword $(MAKEFILE_LIST)))))
 BUILD_DIR := $(BASE_DIR)/build
+CVEX_DUMP_FILE := $(BUILD_DIR)/cvex_dump.out
+
+VCC := vcc
+CMAKE := cmake
 
 # SECTION: Misc.
 .PHONY: help build
@@ -12,4 +16,7 @@ help: ## Show this help.
 
 build: ## Build plugins project using CMake.
 	if not exist $(BUILD_DIR) mkdir $(BUILD_DIR)
-	cmake -B$(BUILD_DIR) -S$(BASE_DIR)
+	$(CMAKE) -B$(BUILD_DIR) -S$(BASE_DIR)
+
+dump_cvex: ## Dumps all VEX functions into file.
+	$(VCC) -X cvex > $(CVEX_DUMP_FILE)
