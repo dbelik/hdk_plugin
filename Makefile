@@ -7,7 +7,7 @@ VCC := vcc
 CMAKE := cmake
 
 # SECTION: Misc.
-.PHONY: help build
+.PHONY: help build dump_cvex
 .DEFAULT_GOAL := help
 
 # SECTION: Commands.

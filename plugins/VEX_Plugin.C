@@ -18,11 +18,10 @@ using namespace HDK_Sample;
 void newVEXOp(void *)
 {
 	new VEX_VexOp(
-		"myprint123@+"_sh,
-		myprint_Evaluate<VEX_32>,
-		myprint_Evaluate<VEX_64>,
+		"compute_plugin@&F"_sh,
+		compute_Evaluate<VEX_32>,
+		compute_Evaluate<VEX_64>,
 		VEX_ALL_CONTEXT,
 		nullptr, nullptr,
-		nullptr, nullptr,
-		VEX_OPTIMIZE_0);
+		nullptr, nullptr);
 }
