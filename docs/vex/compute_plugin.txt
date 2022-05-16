@@ -1,0 +1,10 @@
+= compute_plugin =
+
+#type: vex
+#context: all
+#tags: math
+#group: math
+
+"""Returns .5 constant"""
+
+:usage: `float compute_plugin()`
